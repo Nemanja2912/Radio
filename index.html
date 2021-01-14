@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Radio</title>
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="nav-bar">
+      <img class="logo" src="assests/image/logo.png" alt="" />
+      <div class="dj-info-login">
+        <div class="dj-info">
+          <img src="assests/image/djAvatar.png" alt="" />
+          <p>On Air Chinese</p>
+        </div>
+        <div class="login">
+          <i class="fas fa-user-shield"></i>
+          <p>login</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Song Lists -->
+    <div class="song-list-box">
+      <h3 class="title">Song List</h3>
+      <div id="box-list" class="box-body">
+        <div class="song-box">
+          <div class="left">
+            <div class="circle">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="info">
+              <div class="wrapper">
+                <div class="name">
+                  Hymn for the weekend
+                  <p class="another">Hymn for the weekend</p>
+                </div>
+              </div>
+              <p class="artist">Coldplay</p>
+            </div>
+          </div>
+          <div class="right">
+            <p class="time">05:23</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Radio Controller -->
+    <div class="radio-controller">
+      <div class="left">
+        <div class="image-cover"></div>
+        <div>
+          <p class="name">Hymn for the weekend</p>
+          <p class="artist">Coldplay</p>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="controller">
+          <i class="fas fa-play"></i>
+          <div class="time">
+            <p>00:49</p>
+            <p>03:32</p>
+          </div>
+          <div class="duration-bar">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <i class="fas fa-volume-up"></i>
+      </div>
+
+      <div class="volume-slider">
+        Change Volume
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+          id="myRange"
+        />
+      </div>
+    </div>
+
+    <script src="src/js/script.js"></script>
+  </body>
+</html>

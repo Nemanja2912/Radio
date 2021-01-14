@@ -1,0 +1,343 @@
+// ********* Navigation ********* //
+/*
+
+1.
+2.
+3.
+4.
+5.
+
+*/
+// ****************************** //
+
+// ********* Variable ********* //
+$FONT_FAMILY: "Roboto", sans-serif;
+$PRIMARY_COLOR: #fd3c3d;
+$SECONDARY_COLOR: #ffd112;
+$TEXT_COLOR: #000;
+$BACKGROUND_COLOR: linear-gradient(to right, #ffcc01, #f1d14e, #fecd04);
+
+// ********* General ********* //
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $FONT_FAMILY;
+  font-size: 20px;
+  background-image: $BACKGROUND_COLOR;
+  color: $TEXT_COLOR;
+  font-size: 16px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+// ********* Animation ********* //
+
+@keyframes airAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-125%);
+  }
+}
+
+// ********* NavBar ********* //
+
+.nav-bar {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  .logo {
+    width: 100px;
+  }
+
+  .dj-info-login {
+    display: flex;
+    align-items: center;
+
+    .dj-info {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      margin-right: 30px;
+
+      img {
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+
+      p {
+        animation-name: airAnim;
+        animation-timing-function: linear;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        position: relative;
+        padding: 5px;
+      }
+    }
+
+    .login {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      cursor: pointer;
+
+      i {
+        font-size: 22px;
+        margin-right: 10px;
+        // color: $PRIMARY_COLOR;
+        transform: translateX(100%);
+        transition: 0.5s;
+      }
+
+      p {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: 0.5s;
+      }
+
+      &:hover {
+        i {
+          opacity: 0.7;
+          transform: translateX(0%);
+        }
+
+        p {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// ********* Song List Box ********* //
+.song-list-box {
+  padding: 30px 35px;
+  position: absolute;
+  right: 10vw;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  background-color: #f0f0f0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .box-body {
+    overflow-y: scroll;
+    height: 90%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .song-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #c3c3c3;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: hsla(0, 1%, 81%, 0.3);
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      .circle {
+        height: 60px;
+        width: 60px;
+        background-color: $PRIMARY_COLOR;
+        border-radius: 50%;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          color: #fff;
+          margin-left: 5px;
+        }
+      }
+
+      .wrapper {
+        max-width: 250px;
+        overflow: hidden;
+      }
+
+      .name {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        animation: moveSlideshow 12s linear infinite;
+        position: relative;
+        display: flex;
+
+        .another {
+          position: absolute;
+          left: 100%;
+          margin-left: 25%;
+        }
+      }
+
+      .artist {
+        opacity: 0.7;
+        font-weight: 500px;
+        font-size: 12px;
+      }
+    }
+
+    .right {
+      .time {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// ********* Radio Controller ********* //
+
+.radio-controller {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background-color: #212121;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+
+  .left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .image-cover {
+      background-color: white;
+      height: 100%;
+      width: 75px;
+      margin-right: 10px;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+      white-space: nowrap;
+    }
+
+    .artist {
+      opacity: 0.7;
+      font-weight: 500px;
+      font-size: 12px;
+    }
+  }
+
+  .middle {
+    justify-self: center;
+    text-align: center;
+
+    i {
+      font-size: 20px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+
+    .time {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .duration-bar {
+      width: 300px;
+      height: 5px;
+      margin-top: 5px;
+      background-color: rgba(255, 255, 255, 0.541);
+      position: relative;
+
+      .bar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $PRIMARY_COLOR;
+        width: 50%;
+      }
+    }
+  }
+
+  .right {
+    border-left: 2px solid rgba(255, 255, 255, 0.541);
+    padding: 5px 30px 5px 20px;
+    justify-self: flex-end;
+    position: relative;
+
+    i {
+      font-size: 25px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .volume-slider {
+    position: absolute;
+    right: -100%;
+    top: 0%;
+    transform: translateY(-100%);
+    background-color: hsla(0, 0%, 13%, 0.95);
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.541);
+    display: flex;
+    align-items: center;
+    z-index: -1;
+
+    input {
+      margin-left: 10px;
+    }
+  }
+}
