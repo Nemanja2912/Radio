@@ -1,19 +1,20 @@
 // ********* Navigation ********* //
 /*
 
-1.
-2.
-3.
-4.
-5.
+1. Variable
+2. General
+3. Animation
+4. NavBar
+5. Song list Box
+6. Radio Controller
 
 */
 // ****************************** //
 
 // ********* Variable ********* //
 $FONT_FAMILY: "Roboto", sans-serif;
-$PRIMARY_COLOR: #fd3c3d;
-$SECONDARY_COLOR: #ffd112;
+$PRIMARY_COLOR: #264fff;
+$SECONDARY_COLOR: #b38f00;
 $TEXT_COLOR: #000;
 $BACKGROUND_COLOR: linear-gradient(to right, #ffcc01, #f1d14e, #fecd04);
 
@@ -29,12 +30,36 @@ body {
   font-family: $FONT_FAMILY;
   font-size: 20px;
   background-image: $BACKGROUND_COLOR;
+  background-image: url("../../assests/image/cover.jpg");
   color: $TEXT_COLOR;
   font-size: 16px;
   background-size: cover;
   background-position: center;
+  background-position-x: -150px;
+
+  @media (max-width: 1500px) {
+    background-position-x: -200px;
+  }
+
+  @media (max-width: 1200px) {
+    background-position-x: -275px;
+  }
+
+  @media (max-width: 1100px) {
+    background-position-x: center;
+    background-image: url("../../assests/image/cover2.jpg");
+  }
+
+  // @media (max-height: 970px) {
+  //   background-position-x: -100px;
+  // }
+
   background-repeat: no-repeat;
   height: 100vh;
+
+  @media (min-width: 900px) {
+    min-height: 800px;
+  }
 }
 
 // ********* Animation ********* //
@@ -67,6 +92,10 @@ body {
   right: 0;
   top: 0;
 
+  @media (max-width: 900px) {
+    padding: 20px 15px;
+  }
+
   .logo {
     width: 100px;
   }
@@ -85,6 +114,10 @@ body {
         height: 35px;
         border-radius: 50%;
         margin-right: 5px;
+
+        @media (max-width: 600px) {
+          display: none;
+        }
       }
 
       p {
@@ -95,6 +128,10 @@ body {
         animation-direction: alternate;
         position: relative;
         padding: 5px;
+
+        @media (max-width: 600px) {
+          display: none;
+        }
       }
     }
 
@@ -142,10 +179,33 @@ body {
   bottom: 0;
   border-radius: 10px;
   margin: auto;
-  width: 500px;
-  height: 500px;
+  width: 475px;
+  height: 525px;
   background-color: #f0f0f0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media (max-width: 1450px) {
+    right: 50px;
+  }
+  @media (max-width: 1300px) {
+    right: 50px;
+  }
+
+  @media (max-width: 1100px) {
+    width: 90%;
+    right: 0;
+    left: 0;
+    height: 70vh;
+  }
+
+  @media (max-width: 900px) {
+    width: 95%;
+  }
+
+  @media (max-width: 600px) {
+    padding: 15px;
+    height: 50vh;
+  }
 
   .box-body {
     overflow-y: scroll;
@@ -153,6 +213,10 @@ body {
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    @media (max-width: 400px) {
+      height: 75%;
     }
   }
 
@@ -167,11 +231,15 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #c3c3c3;
+    border-bottom: 3px solid #e8e8e8;
     transition: 0.5s;
 
+    @media (max-width: 400px) {
+      padding: 10px 0;
+    }
+
     &:hover {
-      background-color: hsla(0, 1%, 81%, 0.3);
+      background-color: #e8e8e8;
     }
 
     .left {
@@ -179,8 +247,8 @@ body {
       align-items: center;
 
       .circle {
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
         background-color: $PRIMARY_COLOR;
         border-radius: 50%;
         margin-right: 10px;
@@ -191,6 +259,16 @@ body {
         i {
           color: #fff;
           margin-left: 5px;
+
+          @media (max-width: 400px) {
+            font-size: 10px;
+            margin-left: 2px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          height: 35px;
+          width: 35px;
         }
       }
 
@@ -224,6 +302,10 @@ body {
     .right {
       .time {
         opacity: 0.6;
+
+        @media (max-width: 400px) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -231,7 +313,7 @@ body {
   .active {
     position: relative;
     border: 0px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 
     .name {
       animation: moveSlideshow 12s linear infinite;
@@ -240,8 +322,8 @@ body {
     &:after {
       content: "";
       width: 100%;
-      height: 7px;
-      background-color: #212121;
+      height: 5px;
+      background-color: #9e9e9e;
       position: absolute;
       left: 0;
       right: 0;
@@ -251,7 +333,7 @@ body {
     .duration-bar {
       width: 100%;
       height: 5px;
-      border-bottom: 7px solid $PRIMARY_COLOR;
+      border-bottom: 5px solid $PRIMARY_COLOR;
       position: absolute;
       left: 0;
       right: 0;
@@ -269,13 +351,22 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 75px;
+  height: 80px;
   background-color: #212121;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   justify-content: space-between;
   align-items: center;
   color: #fff;
+
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 600px) {
+    height: 60px;
+  }
 
   .left {
     height: 100%;
@@ -285,8 +376,12 @@ body {
     .image-cover {
       background-color: white;
       height: 100%;
-      width: 75px;
+      width: 80px;
       margin-right: 10px;
+
+      @media (max-width: 600px) {
+        width: 60px;
+      }
 
       img {
         height: 100%;
@@ -313,6 +408,10 @@ body {
     justify-self: center;
     text-align: center;
 
+    @media (max-width: 900px) {
+      margin-right: 15px;
+    }
+
     i {
       font-size: 20px;
 
@@ -325,10 +424,14 @@ body {
     .time {
       display: flex;
       justify-content: space-between;
+
+      @media (max-width: 900px) {
+        display: none;
+      }
     }
 
     .duration-bar {
-      width: 300px;
+      width: 350px;
       height: 4px;
       margin-top: 5px;
       background-color: rgba(255, 255, 255, 0.541);
@@ -342,6 +445,10 @@ body {
         right: 0;
         background-color: $PRIMARY_COLOR;
         width: 0%;
+      }
+
+      @media (max-width: 900px) {
+        display: none;
       }
     }
   }
@@ -359,6 +466,10 @@ body {
         cursor: pointer;
         opacity: 0.7;
       }
+    }
+
+    @media (max-width: 900px) {
+      display: none;
     }
   }
 

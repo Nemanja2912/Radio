@@ -1,3 +1,5 @@
+document.querySelector("body").style.height = `${window.innerHeight}px`;
+
 // HTML Element
 const elSongBox = document.querySelector("#box-list");
 const elAudio = document.querySelector("#audio");
@@ -113,6 +115,10 @@ elPlay.addEventListener("click", function () {
 
 elAudio.addEventListener("timeupdate", function () {
   document.querySelector("#duration-bar1").style.width = `${
+    (elAudio.currentTime * 100) / elAudio.duration
+  }%`;
+
+  document.querySelector("#duration-bar2").style.width = `${
     (elAudio.currentTime * 100) / elAudio.duration
   }%`;
 
