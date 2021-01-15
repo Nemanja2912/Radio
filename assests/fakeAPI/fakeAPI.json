@@ -1,0 +1,69 @@
+{
+  "type": "fakeAPI",
+  "songList": [
+    {
+      "id": 1,
+      "name": "Positions",
+      "artist": "Ariana Grande",
+      "song": "10convert.com_Ariana-Grande-positions-official-video_tcYodQoapMg.mp3",
+      "image": "positions.jpg",
+      "time": "02:58"
+    },
+    {
+      "id": 2,
+      "name": "Break My Heart",
+      "artist": "Dua Lipa",
+      "song": "10convert.com_Dua-Lipa-Break-My-Heart-Official-Video_Nj2U6rhnucI.mp3",
+      "image": "breakMyHeart.jpg",
+      "time": "03:49"
+    },
+    {
+      "id": 3,
+      "name": "34-35",
+      "artist": "Ariana Grande",
+      "song": "Ariana-Grande-34-35-official-video_B6_iQvaIjXw.mp3",
+      "image": "34-35.jpg",
+      "time": "03:41"
+    },
+    {
+      "id": 4,
+      "name": "Girl Like Me",
+      "artist": "Shakira, Black Eyed Peas",
+      "song": "Black Eyed Peas, Shakira - GIRL LIKE ME.mp3",
+      "image": "girlLikeMe.jpg",
+      "time": "03:53"
+    },
+    {
+      "id": 5,
+      "name": "Whoopty",
+      "artist": "CJ",
+      "song": "CJ-WHOOPTY-Official-Music-Video_2xWkATdMQms.mp3",
+      "image": "whoopty.jpg",
+      "time": "02:05"
+    },
+    {
+      "id": 6,
+      "name": "Levitating",
+      "artist": "Dua Lipa",
+      "song": "Dua_Lipa_Levitating_Featuring_DaBaby_Official_M.mp3",
+      "image": "levitating.jpg",
+      "time": "03:50"
+    },
+    {
+      "id": 7,
+      "name": "Diamonds",
+      "artist": "Sam Smith",
+      "song": "Sam-Smith-Diamonds_8RvAKRoIDqU.mp3",
+      "image": "diamonds.jpg",
+      "time": "03:47"
+    },
+    {
+      "id": 8,
+      "name": "Monster",
+      "artist": "Shaw Mendes, Justin Bieber",
+      "song": "Shawn-Mendes-Justin-Bieber-Monster_MPbUaIZAaeA.mp3",
+      "image": "monster.jpg",
+      "time": "03:03"
+    }
+  ]
+}

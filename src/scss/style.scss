@@ -204,7 +204,6 @@ body {
         font-size: 14px;
         margin-bottom: 5px;
         white-space: nowrap;
-        animation: moveSlideshow 12s linear infinite;
         position: relative;
         display: flex;
 
@@ -226,6 +225,39 @@ body {
       .time {
         opacity: 0.6;
       }
+    }
+  }
+
+  .active {
+    position: relative;
+    border: 0px;
+    padding-bottom: 30px;
+
+    .name {
+      animation: moveSlideshow 12s linear infinite;
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 7px;
+      background-color: #212121;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .duration-bar {
+      width: 100%;
+      height: 5px;
+      border-bottom: 7px solid $PRIMARY_COLOR;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      width: 0%;
     }
   }
 }
@@ -255,6 +287,12 @@ body {
       height: 100%;
       width: 75px;
       margin-right: 10px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
 
     .name {
@@ -291,7 +329,7 @@ body {
 
     .duration-bar {
       width: 300px;
-      height: 5px;
+      height: 4px;
       margin-top: 5px;
       background-color: rgba(255, 255, 255, 0.541);
       position: relative;
@@ -303,7 +341,7 @@ body {
         left: 0;
         right: 0;
         background-color: $PRIMARY_COLOR;
-        width: 50%;
+        width: 0%;
       }
     }
   }
@@ -335,9 +373,14 @@ body {
     display: flex;
     align-items: center;
     z-index: -1;
+    transition: 0.5s linear;
 
     input {
       margin-left: 10px;
     }
+  }
+
+  .active {
+    right: 0%;
   }
 }
