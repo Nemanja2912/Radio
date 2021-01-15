@@ -81,7 +81,7 @@ function printSong() {
 // Fake API
 let songPlaylist = [];
 
-fetch("../../assests/fakeAPI/fakeAPI.json")
+fetch("assests/fakeAPI/fakeAPI.json")
   .then((respons) => respons.json())
   .then((data) => {
     songPlaylist = [...data.songList];
